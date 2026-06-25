@@ -1,16 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Product;
+use App\Models\Mahasiswa;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/product', function () {
-    // Kita ambil dari database
-    $product = Product::all();
+Route::get('/mahasiswa', function () {
+    $mahasiswa = Mahasiswa::all();
 
-    // Kirim data $produk di atas ke dalam file view bernama 'product.blade.php'
-    return view('product', ['semuaProduk' => $product]);
+    return view('mahasiswa', ['semuaMahasiswa' => $mahasiswa]);
 });
